@@ -1,0 +1,61 @@
+package utilities;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class Pageutility {
+	
+	
+	public void dropdownSelectByVisibleText(WebElement elementname,String value) //pass the parameters to perform what all things we need for the dropdown
+	{
+		Select s=new Select(elementname);
+		s.selectByVisibleText(value);
+		
+	}
+	public void dropdownSelectByValue(WebElement elementname,String value) 
+	{
+		Select s=new Select(elementname);
+		s.selectByValue(value);	
+	}
+	public void dropdownSelectByIndex(WebElement elementname,int value)
+	{
+		Select s=new Select(elementname);
+		s.selectByIndex(value);
+	}
+	public void actionClassDragAndDrop(WebDriver driver,WebElement element) 
+	{
+		Actions a=new Actions(driver);
+		a.dragAndDrop(element, element).perform();;
+		
+	}
+	
+	public void actionsRightClick(WebDriver driver,WebElement element)
+	{
+		Actions a=new Actions(driver);
+		a.contextClick().perform();
+	}
+	
+	public void actionsMouseHover(WebDriver driver,WebElement element)
+	{
+		Actions a=new Actions(driver);
+		a.moveToElement(element).perform();
+	}
+	public void actionsDoubleClick(WebDriver driver,WebElement element) 
+	{
+		Actions a=new Actions(driver);
+		a.doubleClick(element).perform();
+	}
+	public void JavaScriptExecutorDisplay()
+	{
+		
+	}
+	public void JavaScriptExecutorScroll()
+	{
+		
+	}
+	
+	
+
+}
