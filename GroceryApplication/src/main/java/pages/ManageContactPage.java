@@ -10,7 +10,7 @@ public class ManageContactPage {
 	
 	public WebDriver driver;
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact'][normalize-space()='More info']")WebElement contactinfo;
+	//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact'][normalize-space()='More info']")WebElement contactmoreinfo;
 	@FindBy(xpath="//i[@class='fas fa-edit']")WebElement editicon;
 	@FindBy(xpath="//input[@name='phone']")WebElement phoneno;
 	@FindBy(xpath="//input[@name='email']")WebElement newemail;
@@ -25,31 +25,35 @@ public class ManageContactPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickonmanagecontact()
+	/*public void clickonmanagecontact()
 	{
-		contactinfo.click();
-	}
+		contactmoreinfo.click();
+	}*/
 	
-	public void clickonedit()
+	public ManageContactPage clickOnEdit()
 	{
 		editicon.click();
+		return this;
 	}
 	
-	public void enterphonedata(String phone)
+	public ManageContactPage enterPhoneData(String phone)
 	{
 		phoneno.clear();
 		phoneno.sendKeys(phone);
+		return this;
 		
 	}
-	public void entermail(String email)
+	public ManageContactPage enterMail(String email)
 	{
 		newemail.clear();
 		newemail.sendKeys(email);
+		return this;
 	}
 	
-	public void updatedata()
+	public ManageContactPage updateData()
 	{
 		update.click();
+		return this;
 	}
 	
 	public boolean  isAlertDisplayed()

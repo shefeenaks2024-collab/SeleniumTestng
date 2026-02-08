@@ -5,9 +5,9 @@
   <parameter name="Browser" value="chrome"></parameter>
   <groups><run><include name="Regression"></include></run></groups>
     <classes>
-   <!--  <class name="testScript.LoginTestclass"/>-->
+    <!-- <class name="testScript.LoginTestclass"/>-->
       <!-- <class name="testScript.ManageCategoryTest"/>-->
-         <class name="testScript.AdminUsersTest"/>
+         <class name="testScript.ManageContactTest"/>
      
     </classes>
   </test> <!-- Test -->

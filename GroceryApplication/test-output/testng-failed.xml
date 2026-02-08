@@ -9,13 +9,13 @@
       </run>
     </groups>
     <classes>
-      <class name="testScript.AdminUsersTest">
+      <class name="testScript.ManageContactTest">
         <methods>
-          <include name="verifyusercancreateadminusers"/>
           <include name="browserQuit"/>
+          <include name="verifyusercanupdatecontactinformation"/>
           <include name="browserInitialization"/>
         </methods>
-      </class> <!-- testScript.AdminUsersTest -->
+      </class> <!-- testScript.ManageContactTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -11,7 +11,7 @@ public class AdminUsersPage {
 	
 	public WebDriver driver;
 	
-	@FindBy(xpath="//div[@class='small-box bg-info']//child::a[contains(@href,'admin/list-admin')]")WebElement adminmoreinfo;
+	//@FindBy(xpath="//div[@class='small-box bg-info']//child::a[contains(@href,'admin/list-admin')]")WebElement adminuser_moreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']")WebElement admin_new;
 	@FindBy(xpath="//input[@id='username']")WebElement admin_uname;
 	@FindBy(xpath="//input[@name='password']")WebElement admin_pwd;
@@ -24,31 +24,37 @@ public class AdminUsersPage {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickonadminusers()
+	/*public void clickOnAdminUsers()
 	{
-		adminmoreinfo.click();
-	}
-	public void clickonNew()
+		adminuser_moreinfo.click();
+	}*/
+	public AdminUsersPage clickOnNew()
 	{
 		admin_new.click();
+		return this;
 	}
-	public void enteruname(String uname)
+	public AdminUsersPage enterUsername(String uname)
 	{
 		admin_uname.sendKeys(uname);
+		return this;
 	}
-	public void enterpwd(String pwd)
+	public AdminUsersPage enterPassword(String pwd)
 	{
 		admin_pwd.sendKeys(pwd);
+		return this;
 				
 	}
-	public void performdropdown()
+	public AdminUsersPage performDropdown(String roletype)
 	{
 		Pageutility pageu=new Pageutility();
-		pageu.dropdownSelectByVisibleText(dropdwn_type, "Admin");
+		
+		pageu.dropdownSelectByVisibleText(dropdwn_type,roletype );
+		return this;
 	}
-  public void savedata() 
+  public AdminUsersPage saveData() 
    {
 	  admin_save.click();
+	  return this;
 	  
    }
   
@@ -57,4 +63,5 @@ public class AdminUsersPage {
 	return alertmsg.isDisplayed();
 	  
   }
+  
 }

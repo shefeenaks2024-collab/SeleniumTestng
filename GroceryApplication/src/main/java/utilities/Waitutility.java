@@ -11,39 +11,34 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Waitutility {
-	
-	
-	public static final int IMPLICITWAIT=5;
-	
 
-	public static final int EXPLICITWAIT=10;
-	public static final int FLUENTWAIT=20;
-	public static final int PAGE_LOAD_WAIT=5;
-	
-	public void waitForElementToBeClickable(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
-	    wait.until(ExpectedConditions.elementToBeClickable(element));
+	public static final int IMPLICITWAIT = 5;
+
+	public static final int EXPLICITWAIT = 10;
+	public static final int FLUENTWAIT = 20;
+	public static final int PAGE_LOAD_WAIT = 5;
+
+	public void waitForElementToBeClickable(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-	public void waitForAlertToBeVisible(WebDriver driver,WebElement element)
-	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
-	    wait.until(ExpectedConditions.alertIsPresent());
+
+	public void waitForAlertToBeVisible(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.alertIsPresent());
 	}
-	
-	public void waitForElementisSelectable(WebDriver driver,WebElement element)
-	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
-	    wait.until(ExpectedConditions.elementSelectionStateToBe(element, false));
-		
+
+	public void waitForElementisSelectable(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.elementSelectionStateToBe(element, false));
+
 	}
-public void WaitForElement(WebDriver driver, WebElement target) {
-		
-		Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
-		        .withTimeout(Duration.ofSeconds(FLUENTWAIT))
-		        .pollingEvery(Duration.ofSeconds(PAGE_LOAD_WAIT))
-		        .ignoring(NoSuchElementException.class);
+
+	public void WaitForElement(WebDriver driver, WebElement target) {
+
+		Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(FLUENTWAIT))
+				.pollingEvery(Duration.ofSeconds(PAGE_LOAD_WAIT)).ignoring(NoSuchElementException.class);
 		fluentWait.until(ExpectedConditions.elementToBeClickable(target));
-		
-		
+
 	}
 }
