@@ -33,6 +33,17 @@ public class Waitutility {
 		wait.until(ExpectedConditions.elementSelectionStateToBe(element, false));
 
 	}
+public void waitForFrametobeAvailable(WebDriver driver,WebElement element)
+{
+	WebDriverWait wait=new WebDriverWait (driver,Duration.ofSeconds(EXPLICITWAIT));
+	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
+}
+
+public void waitForTextToBePresent(WebDriver driver,WebElement element)
+{
+	WebDriverWait wait=new WebDriverWait (driver,Duration.ofSeconds(EXPLICITWAIT));
+	wait.until(ExpectedConditions.textToBePresentInElementValue(element, "text"));
+}
 
 	public void WaitForElement(WebDriver driver, WebElement target) {
 

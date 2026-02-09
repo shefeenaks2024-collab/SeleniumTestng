@@ -13,12 +13,10 @@ import utilities.ExcelUtility;
 
 public class ManageContactTest extends Baseclass {
 
-	
 	public HomePage home;
 	public ManageContactPage managecontact;
-	
-	
-	@Test(groups = { "Regression" },description = "Verify user able to update contact information successfully")
+
+	@Test(groups = { "Regression" }, description = "Verify user able to update contact information successfully")
 	public void verifyusercanupdatecontactinformation() throws IOException {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPageU");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPageU");
@@ -26,21 +24,21 @@ public class ManageContactTest extends Baseclass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
 
-		//loginpage.enterpassword(password);
+		// loginpage.enterpassword(password);
 		loginpage.clickSignin();
-		
+
 		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1,Constant.LOGIN_VALID_CREDENTIALS);
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 		String phone = ExcelUtility.readIntegerData(1, 0, "ManageContact");
 		String email = ExcelUtility.readStringData(1, 1, "ManageContact");
-		ManageContactPage manage = new ManageContactPage(driver);
-		managecontact=home.clickonmanagecontact();
+		// ManageContactPage manage = new ManageContactPage(driver);
+		managecontact = home.clickonmanagecontact();
 		managecontact.clickOnEdit().enterPhoneData(phone).enterMail(email).updateData();
-		//manage.enterphonedata(phone);
-		//manage.entermail(email);
-		//manage.updatedata();
-		boolean contactalert = manage.isAlertDisplayed();
+		// manage.enterphonedata(phone);
+		// manage.entermail(email);
+		// manage.updatedata();
+		boolean contactalert = managecontact.isAlertDisplayed();
 		Assert.assertTrue(contactalert);
 	}
 

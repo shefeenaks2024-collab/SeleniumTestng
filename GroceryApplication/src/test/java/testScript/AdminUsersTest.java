@@ -13,40 +13,38 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class AdminUsersTest extends Baseclass {
-	
+
 	public HomePage home;
 	public AdminUsersPage adminuser;
-	
-	
-	
-	@Test(groups = { "Regression" },description = "Verify user able to create admin users successfully", retryAnalyzer = retry.Retry.class)
+
+	@Test(groups = {
+			"Regression" }, description = "Verify user able to create admin users successfully", retryAnalyzer = retry.Retry.class)
 	public void verifyusercancreateadminusers() throws IOException {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPageU");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPageU");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(username).enterPassword(password);//chaining
-		//loginpage.enterpassword(password);
-		home=loginpage.clickSignin();
-		
+		loginpage.enterUserName(username).enterPassword(password);// chaining
+		// loginpage.enterpassword(password);
+		home = loginpage.clickSignin();
+
 		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1,Constant.LOGIN_VALID_CREDENTIALS);
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 		// String uname=ExcelUtility.readStringData(1, 0, "AdminUsers");
 		FakerUtility fake = new FakerUtility();
 		String uname = fake.creatARandomFirstName();
 		String pwd = ExcelUtility.readStringData(1, 1, "AdminUsers");
-		String roletype=ExcelUtility.readStringData(1, 2, "AdminUsers");
-		//AdminUsersPage adminuser = new AdminUsersPage(driver);
-		adminuser=home.clickOnAdminUsers();
+		String roletype = ExcelUtility.readStringData(1, 2, "AdminUsers");
+		// AdminUsersPage adminuser = new AdminUsersPage(driver);
+		adminuser = home.clickOnAdminUsers();
 		adminuser.clickOnNew().enterUsername(uname).enterPassword(pwd).performDropdown(roletype).saveData();
-		//adminuser.enterUsername(uname);
-		//adminuser.enterPassword(pwd);
-		//adminuser.performDropdown();
-		//adminuser.savedata();
+		// adminuser.enterUsername(uname);
+		// adminuser.enterPassword(pwd);
+		// adminuser.performDropdown();
+		// adminuser.savedata();
 		boolean alertmessage = adminuser.isAlertDisplayed();
 		Assert.assertTrue(alertmessage);
-		
 
 	}
 

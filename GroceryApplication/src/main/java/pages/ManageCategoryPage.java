@@ -24,6 +24,7 @@ public class ManageCategoryPage {
 	WebElement addfile;
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement Save;
+	@FindBy(xpath="//div[contains(@class,'alert-success')]")WebElement AlertMessage;
 
 	public ManageCategoryPage(WebDriver driver) {
 		this.driver = driver;
@@ -55,5 +56,11 @@ public class ManageCategoryPage {
 	public ManageCategoryPage saveData() {
 		Save.click();
 		return this;
+	}
+	public boolean isAlertDisplayed()
+	{
+		return AlertMessage.isDisplayed();
+		
+		
 	}
 }
