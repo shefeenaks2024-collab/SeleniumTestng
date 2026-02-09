@@ -28,9 +28,6 @@ public class AdminUsersTest extends Baseclass {
 		// loginpage.enterpassword(password);
 		home = loginpage.clickSignin();
 
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
-
 		// String uname=ExcelUtility.readStringData(1, 0, "AdminUsers");
 		FakerUtility fake = new FakerUtility();
 		String uname = fake.creatARandomFirstName();
@@ -45,6 +42,8 @@ public class AdminUsersTest extends Baseclass {
 		// adminuser.savedata();
 		boolean alertmessage = adminuser.isAlertDisplayed();
 		Assert.assertTrue(alertmessage);
+		boolean home1 = loginpage.isHomePageDisplayed();
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 	}
 

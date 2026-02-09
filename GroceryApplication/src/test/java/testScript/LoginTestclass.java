@@ -13,9 +13,10 @@ import utilities.ExcelUtility;
 
 public class LoginTestclass extends Baseclass {
 
-	
 	public HomePage home;
-	@Test(priority = 1, groups = { "Regression" },description = "Verify user able to login by using vaid credentials successfully")
+
+	@Test(priority = 1, groups = {
+			"Regression" }, description = "Verify user able to login by using vaid credentials successfully")
 	public void verifywhetheruserisabletoenterusingvalidcredentials() throws IOException {
 
 		String username = ExcelUtility.readStringData(1, 0, "LoginPageU");
@@ -23,39 +24,38 @@ public class LoginTestclass extends Baseclass {
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
-		//loginpage.enterpassword(password);
-		home=loginpage.clickSignin();
+		// loginpage.enterpassword(password);
+		home = loginpage.clickSignin();
 		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1,Constant.LOGIN_VALID_CREDENTIALS);
-	
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 	}
 
-	@Test(priority = 2,description = "Verify whether user able to login through wrong username and password  ")
+	@Test(priority = 2, description = "Verify whether user able to login through wrong username and password  ")
 	public void verifyuserabletoenterusinginvalidcredentials() throws IOException {
 		String username = ExcelUtility.readStringData(2, 0, "LoginPageU");
 		String password = ExcelUtility.readStringData(2, 1, "LoginPageU");
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
-		//loginpage.enterpassword(password);
-		home=loginpage.clickSignin();
+		// loginpage.enterpassword(password);
+		home = loginpage.clickSignin();
 		boolean alert = loginpage.isAlertDisplayed();
-		Assert.assertTrue(alert,Constant.LOGIN_VALID_CREDENTIALS);
+		Assert.assertTrue(alert, Constant.LOGIN_VALID_CREDENTIALS);
 
 	}
 
-	@Test(priority = 3,description = "Verify user able to login throug valid username and invalid password  ")
+	@Test(priority = 3, description = "Verify user able to login throug valid username and invalid password  ")
 	public void verifyuserabletoenterusingvalidusernameandinvalidpassword() throws IOException {
 		String username = ExcelUtility.readStringData(3, 0, "LoginPageU");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPageU");
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
-		//loginpage.enterpassword(password);
-		home=loginpage.clickSignin();
+		// loginpage.enterpassword(password);
+		home = loginpage.clickSignin();
 		boolean alert = loginpage.isAlertDisplayed();
-		Assert.assertTrue(alert,Constant.LOGIN_VALID_CREDENTIALS);
+		Assert.assertTrue(alert, Constant.LOGIN_VALID_CREDENTIALS);
 	}
 
 	@Test(priority = 4, dataProvider = "loginProvider", description = "Verify user is able to login by using invalid username and valid password")
@@ -66,10 +66,10 @@ public class LoginTestclass extends Baseclass {
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
-		//loginpage.enterpassword(password);
-		home=loginpage.clickSignin();
+		// loginpage.enterpassword(password);
+		home = loginpage.clickSignin();
 		boolean alert = loginpage.isAlertDisplayed();
-		Assert.assertTrue(alert,Constant.LOGIN_VALID_CREDENTIALS);
+		Assert.assertTrue(alert, Constant.LOGIN_VALID_CREDENTIALS);
 	}
 
 	@DataProvider(name = "loginProvider")

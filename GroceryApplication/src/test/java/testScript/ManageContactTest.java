@@ -27,9 +27,6 @@ public class ManageContactTest extends Baseclass {
 		// loginpage.enterpassword(password);
 		loginpage.clickSignin();
 
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
-
 		String phone = ExcelUtility.readIntegerData(1, 0, "ManageContact");
 		String email = ExcelUtility.readStringData(1, 1, "ManageContact");
 		// ManageContactPage manage = new ManageContactPage(driver);
@@ -40,6 +37,8 @@ public class ManageContactTest extends Baseclass {
 		// manage.updatedata();
 		boolean contactalert = managecontact.isAlertDisplayed();
 		Assert.assertTrue(contactalert);
+		boolean home1 = loginpage.isHomePageDisplayed();
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 	}
 
 }

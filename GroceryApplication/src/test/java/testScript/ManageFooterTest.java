@@ -26,8 +26,6 @@ public class ManageFooterTest extends Baseclass {
 
 		// loginpage.enterpassword(password);
 		home = loginpage.clickSignin();
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 		String address = ExcelUtility.readStringData(1, 0, "ManageFooter");
 		String mailid = ExcelUtility.readStringData(1, 1, "ManageFooter");
@@ -42,6 +40,9 @@ public class ManageFooterTest extends Baseclass {
 		// footerpage.clickonupdatebtn();
 		boolean alert2 = managefooter.isAlertDisplayed();
 		Assert.assertTrue(alert2);
+
+		boolean home1 = loginpage.isHomePageDisplayed();
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 	}
 

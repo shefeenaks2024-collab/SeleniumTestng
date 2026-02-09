@@ -25,8 +25,6 @@ public class ManageNewsTestclass extends Baseclass {
 		loginpage.enterUserName(username).enterPassword(password);
 		// loginpage.enterpassword(password);
 		home = loginpage.clickSignin();
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 		// ManageNewsPage manage = new ManageNewsPage(driver);
 
@@ -37,6 +35,8 @@ public class ManageNewsTestclass extends Baseclass {
 		// manage.save();
 		boolean msgalert = managenews.isAlertmessageDisplayed();
 		Assert.assertTrue(msgalert);
+		boolean home1 = loginpage.isHomePageDisplayed();
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 	}
 
 }

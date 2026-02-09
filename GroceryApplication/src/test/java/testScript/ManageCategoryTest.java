@@ -26,8 +26,6 @@ public class ManageCategoryTest extends Baseclass {
 
 		// loginpage.enterpassword(password);
 		home = loginpage.clickSignin();
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 		// ManageCategoryPage category = new ManageCategoryPage(driver);
 
@@ -40,6 +38,8 @@ public class ManageCategoryTest extends Baseclass {
 		// category.savedata();
 		boolean alertmsg = managecategory.isAlertDisplayed();
 		Assert.assertTrue(alertmsg);
+		boolean home1 = loginpage.isHomePageDisplayed();
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 	}
 
