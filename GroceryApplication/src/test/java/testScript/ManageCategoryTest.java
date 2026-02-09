@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
@@ -25,6 +26,8 @@ public class ManageCategoryTest extends Baseclass {
 
 		// loginpage.enterpassword(password);
 		home = loginpage.clickSignin();
+		boolean home1 = loginpage.isHomePageDisplayed();
+		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
 		// ManageCategoryPage category = new ManageCategoryPage(driver);
 
