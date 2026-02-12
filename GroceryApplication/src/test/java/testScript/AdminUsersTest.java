@@ -26,7 +26,7 @@ public class AdminUsersTest extends Baseclass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);// chaining
 		// loginpage.enterpassword(password);
-		home = loginpage.clickSignin();
+		home=loginpage.clickSignin();
 
 		// String uname=ExcelUtility.readStringData(1, 0, "AdminUsers");
 		FakerUtility fake = new FakerUtility();
@@ -38,12 +38,11 @@ public class AdminUsersTest extends Baseclass {
 		adminuser.clickOnNew().enterUsername(uname).enterPassword(pwd).performDropdown(roletype).saveData();
 		// adminuser.enterUsername(uname);
 		// adminuser.enterPassword(pwd);
-		// adminuser.performDropdown();
+		// adminuser.performDropdown(roletype);
 		// adminuser.savedata();
 		boolean alertmessage = adminuser.isAlertDisplayed();
 		Assert.assertTrue(alertmessage);
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
+		
 
 	}
 

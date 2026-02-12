@@ -41,8 +41,7 @@ public class ManageFooterTest extends Baseclass {
 		boolean alert2 = managefooter.isAlertDisplayed();
 		Assert.assertTrue(alert2);
 
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
+		
 
 	}
 

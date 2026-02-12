@@ -58,6 +58,6 @@ public class Baseclass {
 			scrshot.getScreenshot(driver, iTestResult.getName());
 		}
 
-		driver.quit();
+		//driver.quit();
 	}
 }

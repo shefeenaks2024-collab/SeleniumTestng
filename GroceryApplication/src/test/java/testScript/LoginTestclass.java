@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 
 public class LoginTestclass extends Baseclass {
 
-	public HomePage home;
+	public HomePage homepage;
 
 	@Test(priority = 1, groups = {
 			"Regression" }, description = "Verify user able to login by using vaid credentials successfully")
@@ -25,7 +25,7 @@ public class LoginTestclass extends Baseclass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
 		// loginpage.enterpassword(password);
-		home = loginpage.clickSignin();
+		homepage = loginpage.clickSignin();
 		boolean home1 = loginpage.isHomePageDisplayed();
 		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
 
@@ -39,7 +39,7 @@ public class LoginTestclass extends Baseclass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
 		// loginpage.enterpassword(password);
-		home = loginpage.clickSignin();
+		homepage = loginpage.clickSignin();
 		boolean alert = loginpage.isAlertDisplayed();
 		Assert.assertTrue(alert, Constant.LOGIN_VALID_CREDENTIALS);
 
@@ -53,7 +53,7 @@ public class LoginTestclass extends Baseclass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
 		// loginpage.enterpassword(password);
-		home = loginpage.clickSignin();
+		homepage = loginpage.clickSignin();
 		boolean alert = loginpage.isAlertDisplayed();
 		Assert.assertTrue(alert, Constant.LOGIN_VALID_CREDENTIALS);
 	}
@@ -67,9 +67,10 @@ public class LoginTestclass extends Baseclass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username).enterPassword(password);
 		// loginpage.enterpassword(password);
-		home = loginpage.clickSignin();
+		homepage = loginpage.clickSignin();
 		boolean alert = loginpage.isAlertDisplayed();
 		Assert.assertTrue(alert, Constant.LOGIN_VALID_CREDENTIALS);
+		
 	}
 
 	@DataProvider(name = "loginProvider")

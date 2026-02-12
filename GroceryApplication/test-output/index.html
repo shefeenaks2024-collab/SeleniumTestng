@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\Jebin\git\SeleniumTestng\GroceryApplication\Grouping.xml</span>
+                    <span>C:\Users\Jebin\git\SeleniumTestng\GroceryApplication\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testScript.ManageContactTest" class="method navigator-link" hash-for-method="verifyusercanupdatecontactinformation">verifyusercanupdatecontactinformation</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testScript.ManageNewsTestclass" class="method navigator-link" hash-for-method="verifuserabletopublishmessage">verifuserabletopublishmessage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -121,19 +121,25 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">testScript.ManageContactTest</span>
+              <span class="class-name">testScript.ManageNewsTestclass</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyusercanupdatecontactinformation">
-                  </a> <!-- verifyusercanupdatecontactinformation -->
-                  <span class="method-name">verifyusercanupdatecontactinformation</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;pages.HomePage.clickonmanagecontact()&quot; because &quot;this.home&quot; is null
-	at testScript.ManageContactTest.verifyusercanupdatecontactinformation(ManageContactTest.java:38)
+                  <a name="verifuserabletopublishmessage">
+                  </a> <!-- verifuserabletopublishmessage -->
+                  <span class="method-name">verifuserabletopublishmessage</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
+	at pages.ManageNewsPage.clickOnNews(ManageNewsPage.java:37)
+	at testScript.ManageNewsTestclass.verifuserabletopublishmessage(ManageNewsTestclass.java:33)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 27 stack frames
 </div> <!-- stack-trace -->
+                  <em>
+(Verify user able to add news successfully)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -141,7 +147,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Jebin\git\SeleniumTestng\GroceryApplication\Grouping.xml</span>
+            <span class="header-content">C:\Users\Jebin\git\SeleniumTestng\GroceryApplication\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -150,13 +156,8 @@
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;parameter name=&quot;Browser&quot; value=&quot;chrome&quot;/&gt;
-    &lt;groups&gt;
-      &lt;run&gt;
-        &lt;include name=&quot;Regression&quot;/&gt;
-      &lt;/run&gt;
-    &lt;/groups&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testScript.ManageContactTest&quot;/&gt;
+      &lt;class name=&quot;testScript.ManageNewsTestclass&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -184,7 +185,7 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">verifyusercanupdatecontactinformation</span>
+                <span class="method-in-group-name">verifuserabletopublishmessage</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -206,14 +207,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyusercanupdatecontactinformation')
-data.setCell(0, 2, 'testScript.ManageContactTest')
-data.setCell(0, 3, 2608);
+data.setCell(0, 1, 'verifuserabletopublishmessage')
+data.setCell(0, 2, 'testScript.ManageNewsTestclass')
+data.setCell(0, 3, 3663);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -239,7 +240,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testScript.ManageContactTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testScript.ManageNewsTestclass</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">browserInitialization(chrome)</span>
                 <span class="method-start">0 ms</span>
@@ -247,12 +248,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">verifyusercanupdatecontactinformation</span>
-                <span class="method-start">6326 ms</span>
+                <span class="method-name">verifuserabletopublishmessage</span>
+                <span class="method-start">17121 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyusercanupdatecontactinformation status=FAILURE method=ManageContactTest.verif...)</span>
-                <span class="method-start">8942 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifuserabletopublishmessage status=FAILURE method=ManageNewsTestclass.verifuserab...)</span>
+                <span class="method-start">20791 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

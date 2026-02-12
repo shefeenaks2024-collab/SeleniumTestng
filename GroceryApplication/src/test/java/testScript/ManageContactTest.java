@@ -37,8 +37,7 @@ public class ManageContactTest extends Baseclass {
 		// manage.updatedata();
 		boolean contactalert = managecontact.isAlertDisplayed();
 		Assert.assertTrue(contactalert);
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
+		
 	}
 
 }

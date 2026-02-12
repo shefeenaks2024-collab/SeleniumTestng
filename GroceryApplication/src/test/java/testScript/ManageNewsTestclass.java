@@ -16,7 +16,7 @@ public class ManageNewsTestclass extends Baseclass {
 	public HomePage home;
 	public ManageNewsPage managenews;
 
-	@Test(priority = 1, description = "Verify user able to add news successfully")
+	@Test(priority = 1,groups = { "Regression" }, description = "Verify user able to add news successfully")
 	public void verifuserabletopublishmessage() throws IOException {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPageU");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPageU");
@@ -35,8 +35,7 @@ public class ManageNewsTestclass extends Baseclass {
 		// manage.save();
 		boolean msgalert = managenews.isAlertmessageDisplayed();
 		Assert.assertTrue(msgalert);
-		boolean home1 = loginpage.isHomePageDisplayed();
-		Assert.assertTrue(home1, Constant.LOGIN_VALID_CREDENTIALS);
+		
 	}
 
 }

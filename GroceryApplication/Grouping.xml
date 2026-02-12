@@ -7,7 +7,7 @@
     <classes>
     <!-- <class name="testScript.LoginTestclass"/>-->
       <!-- <class name="testScript.ManageCategoryTest"/>-->
-         <class name="testScript.ManageContactTest"/>
+         <class name="testScript.ManageNewsTestclass"/>
      
     </classes>
   </test> <!-- Test -->

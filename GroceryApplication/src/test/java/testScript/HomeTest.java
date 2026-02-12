@@ -22,8 +22,8 @@ public class HomeTest extends Baseclass {
 		home = loginpage.clickSignin();
 
 		HomePage logout = new HomePage(driver);
-		logout.profileclick();
-		logout.clickonlogout();
+		logout.profileClick();
+		logout.clickOnLogout();
 
 	}
 }

@@ -59,12 +59,12 @@ public class HomePage {
 	}
 	
 	
-	public void profileclick()
+	public void profileClick()
 	{
 		profile.click();
 	}
 
-	public void clickonlogout() {
+	public void clickOnLogout() {
 
 		
 
